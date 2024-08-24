@@ -12,7 +12,7 @@ function Todo({ id, title, completed }: todoInterface) {
   let { RemoveActivity, CompleteActivity } = context;
 
   function HandleOnChange(e: React.ChangeEvent<HTMLInputElement>) {
-    CompleteActivity(id, (completed = e.target.checked));
+    CompleteActivity(id, e.target.checked);
   }
 
   return (

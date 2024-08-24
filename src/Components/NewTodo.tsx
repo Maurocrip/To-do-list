@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { todoListContext } from "../Context/TodoListContext";
 
 export default function NewTodo() {
-  let [input, setInput] = useState("");
+  let [input, setInput] = useState<string>("");
   const context = useContext(todoListContext);
 
   if (!context) {

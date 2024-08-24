@@ -3,11 +3,13 @@ import useTodoList from "../Hooks/TodolistHook";
 import useFiltro from "../Hooks/FiltroHook";
 import { ContextReturn } from "../Types/TypeContextFilter";
 
-export const todoListContext = createContext<ContextReturn | undefined>(
-  undefined
-);
+export const todoListContext = createContext<ContextReturn | undefined>(undefined);
 
-export default function TodoListProvider({ children }: any) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function TodoListProvider({ children }: Props) {
   const [filtro, setFiltro, Filtrar] = useFiltro("all");
   const {
     todoList,

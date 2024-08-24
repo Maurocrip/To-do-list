@@ -8,7 +8,7 @@ export default function useTodoList() : UseTodoListReturn {
     const [todoList, dispatch] = useReducer(TodoReducer,initial);
 
       function RemoveActivity(id: todoInterface["id"]) {
-        dispatch({ type: "REMOVE_PRODUCT", payLoad: { id: id } });
+        dispatch({ type: "REMOVE_PRODUCT", payload: { id: id } });
       }
 
       function DeletCompletedActivity() {
@@ -20,16 +20,16 @@ export default function useTodoList() : UseTodoListReturn {
       }
     
       function CreatTodo(title: todoInterface["title"]) {
-        dispatch({ type: "ADD_PRODUCT", payLoad: { title } });
+        dispatch({ type: "ADD_PRODUCT", payload: {title} });
       }
 
       function CompleteActivity(id: todoInterface["id"], completed: todoInterface["completed"]){
-        dispatch({ type: "COMPLETE_ACTIVITY", payLoad: { id, completed } });
+        dispatch({ type: "COMPLETE_ACTIVITY", payload: {id, completed}  });
       }
 
       function ActiveTodos() {
         let retorno: number = 0;
-        todoList.forEach((element: todoInterface) =>!element.completed ? retorno++ : retorno);
+        todoList.forEach((element) =>!element.completed ? retorno++ : retorno);
         return retorno;
       }
 

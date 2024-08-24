@@ -15,11 +15,11 @@ export default function useFiltro(initial : string) : FilterReturn {
       break;
 
       case "completed":
-        filterToDoList = todoList.filter((todoElemnt: todoInterface) => todoElemnt.completed );
+        filterToDoList = todoList.filter((todoElemnt) => todoElemnt.completed );
       break;
       
       case "todo":
-        filterToDoList = todoList.filter((todoElemnt: todoInterface) => !todoElemnt.completed);
+        filterToDoList = todoList.filter((todoElemnt) => !todoElemnt.completed);
       break;
     }
 
